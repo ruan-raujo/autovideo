@@ -1,0 +1,19 @@
+{
+  "topic": "E se o Sol desaparecesse?",
+  "sources": ["https://science.nasa.gov/sun/facts/", "https://spaceplace.nasa.gov/sun-heat/en/", "https://pmel.noaa.gov/eoi/nemo/explorer/concepts/chemosynthesis.html"],
+  "script": {
+    "language": "PT",
+    "scenes": [
+      {"frames":150,"title":"E se o Sol desaparecesse?","narration":"E se o Sol desaparecesse agora? Quando perceberíamos?","background":"space","elements":[{"asset":"sun","x":0.72,"y":0.34,"scale":0.9,"motion":"bob"},{"asset":"earth","x":0.38,"y":0.58,"scale":1.3,"motion":"spin","speed":0.2}]},
+      {"frames":210,"title":"Uma hipótese impossível","narration":"Isso é uma hipótese impossível na física conhecida. Mas imaginar esse cenário revela como dependemos da nossa estrela.","background":"dusk"},
+      {"frames":240,"title":"Oito minutos de luz","narration":"A luz solar leva cerca de oito minutos para chegar aqui. Durante esse intervalo, ainda veríamos o brilho que já estava a caminho.","background":"space"},
+      {"frames":270,"title":"A noite chega","narration":"Depois, o céu perderia a luz do Sol. A Lua também deixaria de brilhar por reflexão. As estrelas continuariam visíveis, muito distantes.","background":"city"},
+      {"frames":270,"title":"A Terra segue em frente","narration":"A mudança na gravidade também viajaria à velocidade da luz. Depois, a Terra seguiria aproximadamente pela tangente da sua órbita.","background":"space","elements":[{"asset":"earth","x":0.4,"y":0.5,"scale":1.5,"motion":"drift","amplitude":0.15},{"asset":"moon","x":0.72,"y":0.34,"scale":0.5,"motion":"orbit"}]},
+      {"frames":270,"title":"O calor não some de uma vez","narration":"A superfície começaria a esfriar. Isso não aconteceria de uma vez: oceanos, atmosfera e solo ainda guardariam calor. A queda da temperatura seria gradual.","background":"ocean"},
+      {"frames":240,"title":"A cadeia alimentar muda","narration":"Sem luz solar, a fotossíntese seria interrompida. Plantas, animais e pessoas enfrentariam uma crise nas cadeias alimentares.","background":"dusk","elements":[{"asset":"tree","x":0.28,"y":0.55,"scale":1.3,"motion":"bob"},{"asset":"person","x":0.66,"y":0.59,"scale":1.1,"motion":"walk","expression":"worried"}]},
+      {"frames":300,"title":"Ainda poderia existir vida","narration":"O detalhe surpreendente é que nem toda vida depende diretamente da luz. Alguns ecossistemas do fundo do mar usam energia de reações químicas, perto de fontes hidrotermais.","background":"ocean","elements":[{"asset":"vent","x":0.42,"y":0.58,"scale":1.7,"motion":"bob","amplitude":0.008},{"asset":"microbe","x":0.72,"y":0.37,"scale":0.45,"motion":"orbit","amplitude":0.08},{"asset":"microbe","x":0.22,"y":0.32,"scale":0.3,"motion":"drift","amplitude":0.06}]},
+      {"frames":300,"title":"Energia sob nossos pés","narration":"O calor interno da Terra continuaria existindo. Abrigos com energia poderiam ajudar pessoas, mas sobreviver exigiria recursos e planejamento.","background":"snow"},
+      {"frames":150,"title":"Nossa estrela faz diferença","narration":"Sem o Sol, nosso mundo mudaria. Você imaginava essa dependência?","background":"space","elements":[{"asset":"earth","x":0.5,"y":0.5,"scale":1.7,"motion":"bob"}]}
+    ]
+  }
+}

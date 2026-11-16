@@ -1,0 +1,15 @@
+.venv/
+.env
+__pycache__/
+.pytest_cache/
+*.pyc
+*.sqlite3*
+*.lock
+*.log*
+output/*
+!output/.gitkeep
+temp/*
+!temp/.gitkeep
+.taste-skill/
+tests/artifacts/*
+!tests/artifacts/.gitkeep

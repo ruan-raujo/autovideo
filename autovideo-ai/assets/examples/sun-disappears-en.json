@@ -1,0 +1,15 @@
+{
+  "language":"EN",
+  "scenes":[
+    {"frames":150,"title":"What if the Sun disappeared?","narration":"What if the Sun disappeared right now? When would we notice?","background":"space"},
+    {"frames":210,"title":"An impossible thought experiment","narration":"This is impossible under known physics. Still, imagining this event reveals how much our planet depends on the Sun.","background":"dusk"},
+    {"frames":240,"title":"Eight minutes of sunlight","narration":"Sunlight takes about eight minutes to reach Earth. During that time, we would still see light already traveling through space.","background":"space"},
+    {"frames":270,"title":"Daylight would disappear","narration":"Then daylight would disappear. The Moon would also lose its reflected sunlight. Distant stars would remain visible across the dark sky.","background":"city"},
+    {"frames":270,"title":"Earth would keep moving","narration":"A change in gravity would also travel at the speed of light. Earth would then move approximately along the tangent to its orbit.","background":"space"},
+    {"frames":270,"title":"Cooling would take time","narration":"The surface would start cooling, but not all at once. Oceans, air and land would still hold heat, slowing the initial temperature drop.","background":"ocean"},
+    {"frames":240,"title":"Food webs would change","narration":"Without sunlight, photosynthesis would stop. Plants, animals and people would face a spreading crisis across food webs.","background":"dusk"},
+    {"frames":300,"title":"Some life uses chemical energy","narration":"Surprisingly, not all life depends directly on sunlight. Some deep ocean ecosystems use chemical energy from reactions near hydrothermal vents.","background":"ocean"},
+    {"frames":300,"title":"Energy beneath our feet","narration":"Heat inside Earth would remain. Shelters with reliable energy could help people, but survival would demand resources and careful planning.","background":"snow"},
+    {"frames":150,"title":"Our star makes a difference","narration":"Without the Sun, our world would change. Had you imagined this dependence?","background":"space"}
+  ]
+}

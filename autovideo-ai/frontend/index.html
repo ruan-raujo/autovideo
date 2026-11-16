@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR" data-type="software" data-radius="soft">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>AutoVideo AI — estúdio local de vídeos</title>
+  <meta name="description" content="Organize temas e acompanhe a preparação dos seus projetos de vídeo em uma fila local e persistente.">
+  <meta name="page-type" content="software">
+  <meta name="site-kind" content="software">
+  <meta name="theme-color" content="#1c1c1c">
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/app.js" defer></script>
+  <link rel="stylesheet" href="/static/automation.css">
+  <script src="/static/automation.js" defer></script>
+  <link rel="stylesheet" href="/static/library.css">
+  <script src="/static/library.js" defer></script>
+</head>
+<body>
+  <!-- Software workspace. Palette charcoal-room-sage: neutral editing surface and sage actions. Functional dashboard; no marketing sections or ornamental motion. -->
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <aside class="sidebar" aria-label="Navegação principal">
+    <a class="brand" href="/" aria-label="AutoVideo AI, início"><span class="brand-mark" aria-hidden="true">a<span>v</span></span><span>AutoVideo <b>AI</b></span></a>
+    <div class="workspace-label">Seu espaço de produção</div>
+    <nav>
+      <a class="nav-link selected" href="#studio"><span aria-hidden="true">◫</span> Estúdio</a>
+      <a class="nav-link" href="#queue"><span aria-hidden="true">≡</span> Fila de trabalhos <span id="nav-count" class="nav-count">0</span></a>
+      <a class="nav-link" href="#settings"><span aria-hidden="true">⚙</span> Configurações</a>
+    </nav>
+    <div class="sidebar-bottom"><span class="local-dot" aria-hidden="true"></span> Executado neste computador<p>Seus projetos ficam salvos localmente.</p><a href="/docs" target="_blank" rel="noreferrer">Abrir documentação da API ↗</a></div>
+  </aside>
+  <div class="shell">
+    <header class="topbar"><span>Estúdio <span class="breadcrumb">/ Visão geral</span></span><span class="connection" id="connection" role="status">Conectando ao servidor…</span></header>
+    <main id="main">
+      <section id="studio" aria-labelledby="studio-title">
+        <div class="page-heading"><div><p class="eyebrow">AutoVideo AI · Produção local</p><h1 id="studio-title">Seu estúdio de vídeos.</h1><p>Da ideia a duas versões narradas de 80 segundos.</p></div><span class="version-label">PT + EN · v1.0</span></div>
+        <div class="stage-note"><span class="note-icon" aria-hidden="true">i</span><p><strong>Português e inglês, no seu computador.</strong> Gere automaticamente ou revise os roteiros antes de produzir animação, voz e legendas.</p></div>
+        <div class="studio-grid">
+          <section class="panel create-panel" aria-labelledby="create-title">
+            <div class="panel-heading"><h2 id="create-title">Novo projeto</h2><span class="muted">01</span></div>
+            <form id="create-form">
+              <label for="topic">Qual é o tema da história?</label>
+              <textarea id="topic" name="topic" rows="4" minlength="5" maxlength="300" placeholder="E se a Terra parasse de girar?" required aria-describedby="topic-help topic-error"></textarea>
+              <div class="field-meta"><span id="topic-help">Uma ideia por projeto.</span><span id="char-count">0 / 300</span></div>
+              <p id="topic-error" class="field-error" role="alert"></p>
+              <div class="format-line"><span>Formato de destino</span><strong>Vertical · 9:16</strong></div>
+              <div class="spec-grid"><div><span>Duração</span><strong>80 segundos</strong></div><div><span>Resolução</span><strong>1080 × 1920</strong></div><div><span>Quadros</span><strong>30 fps · 2400</strong></div></div>
+              <button class="button primary" id="submit-button" type="submit">Adicionar à fila <span aria-hidden="true">↗</span></button>
+              <p class="form-status" id="create-status" role="status">O tema será salvo no banco de dados deste computador.</p>
+              <button class="button secondary example-button" id="create-example" type="button">Criar exemplo do Sol</button>
+            </form>
+          </section>
+          <section class="panel workflow-panel" aria-labelledby="workflow-title">
+            <div class="panel-heading"><h2 id="workflow-title">Da ideia ao vídeo</h2><span class="tag">Local</span></div>
+            <ol class="pipeline"><li class="available"><span class="step-number">1</span><div><h3>Escolher a história</h3><p>Informe um tema ou peça uma ideia nova.</p></div><span class="step-state">Ollama</span></li><li class="available"><span class="step-number">2</span><div><h3>Revisar os roteiros</h3><p>Edite português, inglês e composição das cenas.</p></div><span class="step-state">PT + EN</span></li><li class="available"><span class="step-number">3</span><div><h3>Animar, narrar e legendar</h3><p>Cenas em movimento com vozes locais.</p></div><span class="step-state">80 s</span></li><li class="available"><span class="step-number">4</span><div><h3>Validar e baixar</h3><p>Arquivos liberados após verificação integral.</p></div><span class="step-state">MP4</span></li></ol>
+            <div class="workflow-footer"><span aria-hidden="true">↳</span> Em modo automático, cada história percorre toda a sequência.</div>
+          </section>
+        </div>
+      </section>
+      <section id="queue" class="queue-section" aria-labelledby="queue-title">
+        <div class="section-heading"><div><h2 id="queue-title">Fila de trabalhos <span id="total-count" class="count">0</span></h2><p>Um vídeo por vez. Progresso atualizado durante a renderização.</p></div><button type="button" id="refresh" class="button secondary">Atualizar fila <span aria-hidden="true">↻</span></button></div>
+        <div class="filter-row"><label for="status-filter">Mostrar</label><select id="status-filter"><option value="">Todos os estados</option><option value="queued">Na fila</option><option value="preparing">Preparando</option><option value="awaiting_renderer">Aguardando roteiro ou geração</option><option value="render_queued">Na fila de vídeo</option><option value="synthesizing">Gerando narração</option><option value="rendering">Renderizando</option><option value="validating">Validando vídeo</option><option value="completed">Concluídos</option><option value="paused">Pausados</option><option value="cancelled">Cancelados</option><option value="failed">Com erro</option></select><span id="queue-summary" class="muted"></span></div>
+        <p id="queue-error" class="field-error" role="alert"></p>
+        <div id="jobs" class="jobs" aria-label="Trabalhos salvos"><div class="empty-state"><span class="empty-icon" aria-hidden="true">≡</span><h3>Carregando seus projetos</h3><p>Consultando a fila local.</p></div></div>
+        <div class="pagination"><button class="button secondary" id="previous-page" type="button" disabled>Página anterior</button><span id="page-label" class="muted">Página 1</span><button class="button secondary" id="next-page" type="button" disabled>Próxima página</button></div>
+      </section>
+      <section id="settings" class="settings-grid" aria-label="Configurações e diagnóstico">
+        <div class="panel"><div class="panel-heading"><h2>Configurações da fila</h2><span class="tag">SQLite</span></div><form id="settings-form"><label for="poll-seconds">Intervalo de consulta do worker (segundos)</label><div class="settings-input"><input id="poll-seconds" type="number" min="0.2" max="10" step="0.1" value="1" required></div><div class="render-settings"><div><label for="cpu-threads">Threads de CPU</label><input id="cpu-threads" type="number" min="1" max="4" value="2" required></div><div><label for="memory-limit">Memória máxima (MB)</label><input id="memory-limit" type="number" min="768" max="4096" value="1600" required></div><div><label for="subtitle-size">Tamanho das legendas</label><input id="subtitle-size" type="number" min="42" max="82" value="62" required></div></div><button class="button secondary" type="submit">Salvar configurações</button><p class="muted">Um trabalho por vez. Alterações valem para a próxima renderização.</p><p class="form-status" id="settings-status" role="status"></p></form><details><summary>Ver pasta de dados</summary><code id="data-dir"></code></details></div>
+        <div class="panel"><div class="panel-heading"><h2>Ambiente local</h2><span id="health-tag" class="tag">Verificando</span></div><div id="environment" class="environment"></div><p class="muted" id="media-status">Verificando voz e dependências de mídia.</p></div>
+      </section>
+      <footer><span>AutoVideo AI</span><span>Produção local. Tecnologias gratuitas.</span><a href="/docs" target="_blank" rel="noreferrer">Consultar API ↗</a></footer>
+    </main>
+  </div>
+  <dialog id="job-dialog" aria-labelledby="dialog-title"><div class="dialog-heading"><h2 id="dialog-title">Detalhes do projeto</h2><button id="close-dialog" class="button secondary" type="button" autofocus>Fechar detalhes</button></div><p id="detail-topic"></p><div id="media-preview"></div><dl id="detail-info"></dl><h3>Histórico de processamento</h3><ol id="event-list" class="event-list"></ol><p class="muted">A produção automática gera um MP4 de 80 segundos em cada idioma.</p></dialog>
+  <dialog id="script-dialog" aria-labelledby="script-title"><div class="dialog-heading"><div><h2 id="script-title">Editor de roteiro</h2><p class="muted" id="script-topic"></p></div><button id="close-editor" class="button secondary" type="button">Fechar editor</button></div><p class="muted">Escreva números por extenso. A voz verifica se cada fala cabe no tempo da cena, sem cortar palavras.</p><form id="script-form"><p id="script-totals" role="status"></p><div id="scene-editor"></div><details><summary>Editar estrutura JSON das cenas</summary><label for="script-json">Roteiro, elementos e câmera</label><textarea id="script-json" rows="12" spellcheck="false"></textarea><button id="apply-json" class="button secondary" type="button">Aplicar estrutura JSON</button></details><p id="script-error" class="field-error" role="alert"></p><p id="script-status" class="form-status" role="status"></p><div class="editor-actions"><button class="button secondary" type="submit">Salvar roteiro</button><button class="button primary" id="save-render" type="button">Salvar e gerar vídeo PT</button></div></form></dialog>
+</body>
+</html>
